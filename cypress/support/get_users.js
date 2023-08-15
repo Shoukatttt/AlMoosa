@@ -2,7 +2,7 @@ class GetUsers {
     getUserData(userId) {
         return cy.fixture('users.json').then(users => {
             const user = users.find(user => user.id === userId);
-            return user ? { mrn: user.mrn, password: user.password, id: user.id } : null;
+            return user ? { mrn: user.mrn, password: user.password, id: user.id, saudiId: user.saudi_id, iqamaId: user.iqama_id  } : null;
         });
     }
 
@@ -20,6 +20,20 @@ class GetUsers {
 
     getUserWithIncorrectMRNIncorrectPassword() {
         return this.getUserData(6);
+    }
+    getUserWithCorrectSaudiId() {
+        return this.getUserData(2)
+    }
+    getUserWithInCorrectSaudiId() {
+        return this.getUserData(7)
+    }
+    getUserWithCorrectIqamaId() {
+        return this.getUserData(3)
+
+    }
+    getUserWithInCorrectIqamaId() {
+        return this.getUserData(8)
+
     }
 }
 
