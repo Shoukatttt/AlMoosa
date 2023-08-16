@@ -17,4 +17,7 @@ describe('Login through MRN', () => {
     it('Login with Incorrect MRN and Incorrect Password', () => {
         login.LoginWithIncorrectPasswordAndMRN()
     })
+    it('Check login Validations on MRN and Password for Input fields', () => {
+        login.LoginWithInvalidPasswordAndMRN()
+    })
 })

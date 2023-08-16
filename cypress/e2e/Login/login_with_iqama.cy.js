@@ -10,6 +10,7 @@ describe('Login through Iqama Id', () => {
     })
     it('Login with incorrect Iqama Id', () => {
         login.loginWithIncorrectIqamaId()
+
     })
 
 })

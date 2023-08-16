@@ -4,7 +4,7 @@ describe('Login through Saudi Id', () => {
     beforeEach(() => {
         cy.visit('https://stage-patientportal.almoosahospital.com.sa/auth/user/dashboard', { timeout: 60000 })
     })
-    it.only('Login with correct Saudi Id', () => {
+    it('Login with correct Saudi Id', () => {
         login.loginWithSaudiId()
         cy.wait(10000)
         cy.url().then((url) => {
@@ -21,7 +21,7 @@ describe('Login through Saudi Id', () => {
 
     })
 
-    it.only('Login with incorrect Saudi Id', () => {
+    it('Login with incorrect Saudi Id', () => {
         login.loginWithIncorrectSaudiId()
     })
 })
