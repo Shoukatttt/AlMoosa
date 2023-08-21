@@ -1,11 +1,12 @@
 import login from '../../support/login';
 
-describe('Login through Saudi Id', () => {
+describe('Login through Iqama Id', () => {
     beforeEach(() => {
-        cy.visit('https://stage-patientportal.almoosahospital.com.sa/auth/user/dashboard', { timeout: 60000 })
+        cy.visit('https://stage-patientportal.almoosahospital.com.sa/auth/user/dashboard',{timeout:60000})
     })
-    it('Login with correct Saudi Id', () => {
-        login.loginWithSaudiId()
+
+    it('Login with correct Iqama Id', () => {
+        login.loginWithIqamaId()
         cy.wait(10000)
         cy.url().then((url) => {
             cy.log('here is url:',url)
@@ -17,11 +18,11 @@ describe('Login through Saudi Id', () => {
             else {
                 cy.contains('With Our Specialist Today').should('be.visible');
             }
-        });
+        })
+    })
+    it('Login with incorrect Iqama Id', () => {
+        login.loginWithIncorrectIqamaId()
 
     })
 
-    it('Login with incorrect Saudi Id', () => {
-        login.loginWithIncorrectSaudiId()
-    })
 })
