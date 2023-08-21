@@ -35,6 +35,9 @@ class GetUsers {
         return this.getUserData(8)
 
     }
+    getDoctor() {
+        return this.getUserData(901)
+    }
 }
 
 export default GetUsers;

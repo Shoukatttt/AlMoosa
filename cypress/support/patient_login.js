@@ -34,11 +34,9 @@ class Login {
                 .invoke('text')
                 .then((text) => {
                     toast_message = text
-                    console.log('Here is tost message', toast_message)
                 })
             cy.contains('Forgot Password?').should('be.visible')
             cy.wait('@getResponse').then((resp) => {
-                console.log('This is response', resp)
                 expect(resp.response.statusCode).to.eq(401)
                 const message = resp.response.body.message
                 expect(message).to.eq(toast_message)
@@ -62,11 +60,9 @@ class Login {
                 .invoke('text')
                 .then((text) => {
                     toast_message = text
-                    console.log('Here is tost message', toast_message)
                 })
             cy.contains('Forgot Password?').should('be.visible')
             cy.wait('@getResponse').then((resp) => {
-                console.log('This is response', resp)
                 expect(resp.response.statusCode).to.eq(401)
                 const message = resp.response.body.message
                 expect(message).to.eq(toast_message)
@@ -94,7 +90,6 @@ class Login {
                 })
             cy.contains('Forgot Password?').should('be.visible')
             cy.wait('@getResponse').then((resp) => {
-                console.log('This is response', resp)
                 expect(resp.response.statusCode).to.eq(401)
                 const message = resp.response.body.message
                 expect(message).to.eq(toast_message)
@@ -176,7 +171,6 @@ class Login {
                 })
             cy.contains('have an account yet?').should('be.visible')
             cy.wait('@getOTP').then((resp) => {
-                console.log('This is response', resp)
                 expect(resp.response.statusCode).to.eq(201)
                 const message = resp.response.body.message
                 expect(message).to.eq(toast_message)
@@ -249,7 +243,6 @@ class Login {
                 })
             cy.contains('have an account yet?').should('be.visible')
             cy.wait('@getOTP').then((resp) => {
-                console.log('This is response', resp)
                 expect(resp.response.statusCode).to.eq(201)
                 const message = resp.response.body.message
                 expect(message).to.eq(toast_message)

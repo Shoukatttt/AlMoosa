@@ -1,4 +1,4 @@
-import login from '../../support/login';
+import login from '../../support/patient_login';
 
 describe('Login through MRN', () => {
     beforeEach(() => {
