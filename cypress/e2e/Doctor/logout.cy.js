@@ -1,5 +1,5 @@
 import logout from '../../support/doctor_logout'
-describe('Login from Doctor', () => {
+describe('Logout from Doctor', () => {
     beforeEach(() => {
         cy.visit('https://stage-patientportal.almoosahospital.com.sa/auth/user/dashboard',{timeout:60000})
     })
