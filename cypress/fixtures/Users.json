@@ -47,6 +47,16 @@
     {
         "id": 901,
         "password":"qwer2023"
+    },
+    {
+        "id": 9,
+        "iqama_id": 2443897620,
+        "phone_number":"0534066255"
+    },
+    {
+        "id": 10,
+        "saudi_id": 1080147364,
+        "phone_number":"0547475411"
     }
     
 ]

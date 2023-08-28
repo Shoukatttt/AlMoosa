@@ -1,4 +1,4 @@
-import login from '../../support/patient_login';
+import login from '../../support/Patient_Classes/Patient_Login/patient_login';
 
 describe('Login through Saudi Id', () => {
     beforeEach(() => {
@@ -8,7 +8,6 @@ describe('Login through Saudi Id', () => {
         login.loginWithSaudiId()
         cy.wait(10000)
         cy.url().then((url) => {
-            cy.log('here is url:',url)
             if (url.includes('terms-and-condition')) {
                 cy.get('.custom-control-label').click();
                 cy.contains('button', 'Continue').click();

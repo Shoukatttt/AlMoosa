@@ -1,4 +1,4 @@
-import GetUsers from './get_users'
+import GetUsers from '../../get_users'
 let toast_message
 class Login {
 

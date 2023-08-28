@@ -1,4 +1,4 @@
-import GetUsers from './get_users'
+import GetUsers from '../../get_users'
 let toast_message
 class Login {
 
@@ -102,36 +102,36 @@ class Login {
         cy.get('.language-switcher').click()
         cy.contains('Login').click()
         cy.get('.custom-select').select('Proceed with MRN')
-            cy.get('[placeholder="Enter the ID Number"]').click()
-            cy.get('[placeholder="Enter the ID Number"]').type('12')
-            cy.get('[placeholder="Enter Password"]').click()
-            cy.get('[placeholder="Enter Password"]').type('abcd')
-            cy.contains('button', 'Login').click()
-            cy.get('.toasted-container.top-right')
-                .invoke('text')
-                .then((text) => {
-                    cy.contains('Forgot Password?').should('be.visible')
-                    expect(text).to.eq('MRN should be 7 digits')
-                })
-                cy.get('[placeholder="Enter the ID Number"]').clear()
-                cy.wait(5000)
-                cy.contains('button', 'Login').click()
-                cy.wait(5000)
-                cy.get('.toasted-container.top-right')
-                .invoke('text')
-                .then((text) => {
-                    expect(text).to.eq('MRN is required')
-                })
-                cy.get('[placeholder="Enter the ID Number"]').type('3109578')
-                cy.get('[placeholder="Enter Password"]').clear()
-                cy.wait(5000)
-                cy.contains('button', 'Login').click()
-                cy.wait(5000)
-                cy.get('.toasted-container.top-right')
-                .invoke('text')
-                .then((text) => {
-                    expect(text).to.eq('Password is required')
-                })
+        cy.get('[placeholder="Enter the ID Number"]').click()
+        cy.get('[placeholder="Enter the ID Number"]').type('12')
+        cy.get('[placeholder="Enter Password"]').click()
+        cy.get('[placeholder="Enter Password"]').type('abcd')
+        cy.contains('button', 'Login').click()
+        cy.get('.toasted-container.top-right')
+            .invoke('text')
+            .then((text) => {
+                cy.contains('Forgot Password?').should('be.visible')
+                expect(text).to.eq('MRN should be 7 digits')
+            })
+        cy.get('[placeholder="Enter the ID Number"]').clear()
+        cy.wait(5000)
+        cy.contains('button', 'Login').click()
+        cy.wait(5000)
+        cy.get('.toasted-container.top-right')
+            .invoke('text')
+            .then((text) => {
+                expect(text).to.eq('MRN is required')
+            })
+        cy.get('[placeholder="Enter the ID Number"]').type('3109578')
+        cy.get('[placeholder="Enter Password"]').clear()
+        cy.wait(5000)
+        cy.contains('button', 'Login').click()
+        cy.wait(5000)
+        cy.get('.toasted-container.top-right')
+            .invoke('text')
+            .then((text) => {
+                expect(text).to.eq('Password is required')
+            })
     }
 
     loginWithSaudiId() {
