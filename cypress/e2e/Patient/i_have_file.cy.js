@@ -11,7 +11,7 @@ describe('Register Via Medical File Process', () => {
     it('Register Via Saudi Id',() =>{
         register.RegisterViaSaudiId()
     })
-    it.only('Verify Input Validations on Register Screen.',() =>{
+    it('Verify Input Validations on Register Screen.',() =>{
         register.InputValidations()
     })
 })
