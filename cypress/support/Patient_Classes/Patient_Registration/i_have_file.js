@@ -165,14 +165,6 @@ class Registeration {
                 .then((text) =>{
                     expect(text).to.eq(`The medical file against this Saudi ID / Iqama Id doesn't found`)
                 })
-                
-                //
-                // cy.get('[placeholder="Enter the ID Number"]').clear()
-                // cy.get('[placeholder="Enter the ID Number"]').type('212121212121212121')
-                // cy.contains('button', 'Login').click()
-                // expect(toast_message).to.eq('Iqama ID should be between 8 and 15  digits')
-                // cy.get('[placeholder="Enter the ID Number"]').clear()
-                // cy.wait(5000)
             })
 
 

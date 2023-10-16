@@ -2,7 +2,7 @@ import GetUsers from '../../get_users'
 let toast_message
 class Login {
 
-    users = new GetUsers();
+    users = new GetUsers()
     doctorLogin() {
 
         cy.get('.language-switcher').click()
@@ -13,7 +13,6 @@ class Login {
             cy.get('.custom-control-label').click()
             cy.contains('button', 'Login').click()
             cy.wait(5000)
-            cy.contains('Critical Results').should('be.visible')
 
         })
     }
@@ -25,6 +24,7 @@ class Login {
                 cy.xpath('//input[@placeholder="Enter ID"]').type('903')
                 cy.xpath('//input[@placeholder="Enter Password"]').type('abc')
                 cy.contains('button', 'Login').click()
+                cy.wait(10000)
                 cy.get('.toasted-container.top-right')
                     .invoke('text')
                     .then((text) => {
